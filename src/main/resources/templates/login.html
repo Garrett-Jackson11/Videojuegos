@@ -5,61 +5,70 @@
     <head th:replace="~{layout/plantilla :: head}">
         <title>TechShop</title>
         <meta charset="UTF-8"/>
+
     </head>
     <body>
-        <header th:replace="~{layout/plantilla :: header}"/>
+        <header th:replace="~{layout/plantilla01 :: header}"/>
+        <section th:replace="~{layout/plantilla01 :: section}"/>
+        
         <div class="formulario">
 
-            <form method ="post">
+            <form method ="post"  th:action="@{/login}">
                 <div class="username">
-                    <input type="text" required><!-- comment --> 
-                    <label>Nombre de usuario</label>
+                    <input type="text" required>
+                        <label for="username"><i class="fas fa-user-lock"></i>[[#{login.username}]]:</label>
                 </div>
                 <div class="username">
                     <input type="password" required>
-                    <label>Contraseña</label>
+                        <label class="col-md-5 my-auto" for="password"><i class="fas fa-key"></i>[[#{login.password}]]</label>
+                </div>
+                <div>
+                    <button class="btn btn-primary" >
+                        <a th:href="@{/registro/nuevo}" class="btn"><i class="fas fa-user-plus"></i> [[#{accion.registrar}]]</a></button>
+                    <button class="btn btn-info" >                                        
+                        <a th:href="@{/registro/recordar}" class="btn"><i class="fas fa-envelope"></i> [[#{accion.recordar}]]</a></button>
+                    <button class="btn btn-success" type="submit">
+                        <span class="btn"><i class="fas fa-sign-in-alt"></i>
+                            [[#{login.login}]]</span></button>
+                </div>
+            </form>
+        </div>
+        <!--
+
+        <div class="formulario">
+
+            <form method ="post" th:action="@{/login}">
+                <div class="username">
+                    <input type="text" required>
+                        <label for="username"><i class="fas fa-user-lock"></i>[[#{login.username}]]:</label>
+                </div>
+                <div class="username">
+                    <input type="password" required>
+                        <label class="col-md-5 my-auto" for="password"><i class="fas fa-key"></i>[[#{login.password}]]</label>
                 </div>
                 <div class="recordar">Olvido su contraseña?</div>
                 <input type="submit" value="iniciar">
 
-                <div class="registrarse">
-                    <a href="#">Registrame</a>
-                </div>
+                    <div>
+                        <button class="btn btn-primary" >
+                            <a th:href="@{/registro/nuevo}" class="btn"><i class="fas fa-user-plus"></i> [[#{accion.registrar}]]</a></button>
+                        <button class="btn btn-info" >                                        
+                            <a th:href="@{/registro/recordar}" class="btn"><i class="fas fa-envelope"></i> [[#{accion.recordar}]]</a></button>
+                        <button class="btn btn-success" type="submit">
+                            <span class="btn"><i class="fas fa-sign-in-alt"></i>
+                                [[#{login.login}]]</span></button>
+                    </div>
             </form>
         </div>
-        <div class="container my-5">
-            <div class="row align-items-center"> 
-                <div class="col-md-3"></div>
-                <div class="col-md-6">
-                    <div class="card">
-                        <div class="card-header bg-success"><h2>[[#{login.login}]]</h2></div>
-                        <div class="card-body">
-                            <form method="POST" th:action="@{/login}">
-                                <div class="username">
-                                    <label for="username"><i class="fas fa-user-lock"></i>[[#{login.username}]]</label>
-                                    <div>
-                                        <input class="form-control" type="text" name="username" id="username"/></div></div>
-                                <div>
-                                    <label class="col-md-5 my-auto" for="password"><i class="fas fa-key"></i>[[#{login.password}]]</label>
-                                    <div class="col-md-7 my-auto"><input class="form-control" type="password" name="password" id="password"/></div></div>
-                                <div class="card-footer col text-center">
-                                    <button class="btn btn-primary" >
-                                        <a th:href="@{/registro/nuevo}" class="btn"><i class="fas fa-user-plus"></i> [[#{accion.registrar}]]</a></button>
-                                    <button class="btn btn-info" >                                        
-                                        <a th:href="@{/registro/recordar}" class="btn"><i class="fas fa-envelope"></i> [[#{accion.recordar}]]</a></button>
-                                    <button class="btn btn-success" type="submit">
-                                        <span class="btn"><i class="fas fa-sign-in-alt"></i>
-                                            [[#{login.login}]]</span></button>
-                                </div>
-                            </form>                            
-                        </div>
-                    </div>
-                    <div th:if="${param.error != null}">
-                        <h3>[[#{error.login}]]</h3>
-                    </div>
-                </div>
-            </div>           
+        -->
+
+
+        <div th:if="${param.error != null}">
+            <h3>[[#{error.login}]]</h3>
         </div>
-        <footer th:replace="~{layout/plantilla :: footer}"/>
+        </div>
+        </div>           
+        </div>
+
     </body>
 </html>

@@ -1,0 +1,317 @@
+<html>
+    <head>
+        <title>TransJacksonTours</title>
+       <title>TechShop</title>
+        <meta charset="UTF-8"/>
+        <link th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" rel="stylesheet"/>
+        <link th:href="@{/webjars/font-awesome/css/all.css}" rel="stylesheet"/>
+        <script th:src="@{/js/rutinas.js}"></script>
+        <script th:src="@{/webjars/jquery/jquery.min.js}"></script>
+        <script th:src="@{/webjars/popper.js/umd/popper.min.js}"></script>
+        <script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+        <link href="../static/CSS/style01.css" rel="stylesheet" type="text/css"/>
+        <link href="../static/CSS/style.css" rel="stylesheet" type="text/css"/>
+    </head>
+    <body>
+
+        <header class="head" th:fragment="header">
+            <style>
+                *{
+                    margin: 0;
+                    padding: 0;
+                    border: 0;
+                    font-size: 100%;
+                    vertical-align: baseline;
+                }
+
+                body{
+                    text-align: center;
+                    font-family: sans-serif;
+                }
+
+                ol{
+                    list-style: center;
+                }
+
+
+
+                .head{
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    height: 63px;
+                    background: #171717;
+                    position: fixed;
+                    width: 100%;
+                    z-index: 100;
+                }
+
+                .navbar{
+                    display: flex;
+                    margin-right: 10px;
+
+                }
+
+                .logo{
+                    margin-left: 30px;
+                }
+
+                .logo a{
+                    text-decoration: none;
+                    color: #fff;
+                    text-transform: uppercase;
+                    font-size: 20px;
+                }
+                .navbar a{
+                    display: block;
+                    padding: 20px 20px;
+                    color: #fff;
+                    text-decoration: none;
+                    text-transform: uppercase;
+                    font-size: 20px;
+                }
+
+                .navbar a:hover {
+                    background: #3f3f3f;
+
+                }
+
+                header{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                }
+
+
+
+                .header{
+                    height: 60vh !important;
+                    background: url('hiace.jpeg') no-repeat center;
+                    background-size: cover;
+                }
+                .header1{
+                    height: 60vh !important;
+                    background: url(paisaje.jpg) no-repeat center;
+                    background-size: cover;
+                }
+
+                .header2{
+                    height: 60vh !important;
+                    background: url(buses.jpg) no-repeat center;
+                    background-size: cover;
+                }
+
+                .header3{
+                    height: 60vh !important;
+                    background: url(cascada.jpg) no-repeat center;
+                    background-size: cover;
+                }
+
+                .title{
+                    margin-bottom: 40px;
+                    font-size: 60px;
+                    font-weight: 600;
+                    text-transform: uppercase;
+                    color: #fff;
+                }
+
+                p{
+                    margin-bottom: 40px;
+                    font-size: 18px;
+                    color: #fff;
+                    padding: 0 100px;
+                }
+                .btn1{
+
+                    display: inline-block;
+                    margin-top: 0px;
+                    padding: 10px 40px;
+                    border: 2px solid #8fb448;
+                    color: #fff;
+                    text-decoration: none;
+                    background: #8fb448;
+
+                }
+
+                .btn{
+                    display: inline-block;
+                    margin-top: 15px;
+                    padding: 10px 40px;
+                    border: 2px solid #8fb448;
+                    color: #fff;
+                    text-decoration: none;
+                    background: #8fb448;
+
+                }
+
+                .btn:hover{
+                    background: none;
+                }
+
+                .btn-home {
+                    display: flex;
+                }
+
+                .btn-home a{
+                    margin: 0 10px;
+                }
+
+                .content{
+                    height: 50vh;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+
+                }
+
+                .sau{
+                    padding: 30px;
+                    background: #1f1d1d;
+
+                }
+
+                .box-container{
+                    display: flex;
+                    justify-content: center;
+                    flex-wrap: wrap;
+                    text-align: center;
+                }
+
+                .box-container .box{
+                    height: 11rem;
+                    width: 17rem;
+                    background: #101010;
+                    text-align: center;
+                    border-radius: 1rem;
+                    box-shadow: 0 .3rem 5rem rgba(0, 0, 0, 5);
+                    margin: 2rem;
+                }
+
+                .img1{
+                    margin-top: 10px;
+                }
+                .box-container .box i{
+                    height: 3rem;
+                    width: 3rem;
+                    line-height: 3rem;
+                    text-align: center;
+                    border-radius: 50%;
+                    color: #fff;
+                    background: #8fb448;
+                    font-size: 2rem;
+                    margin: 1rem 0;
+                }
+
+                .box-container .box h3{
+                    font-size: 20px;
+                    color: #8fb448;
+                }
+
+                .box-container .box p{
+                    padding: 0 15px;
+                    font-size: 16px;
+
+                }
+
+                .about{
+                    background: #171717;
+
+                }
+
+                .price{
+
+                    background: url(buses.jpg) no-repeat center;
+                    background-attachment: fixed;
+                    background-size: cover;
+                    text-align: center;
+                }
+
+                .contact{
+                    padding-top: 20px;
+                    background: #171717;
+                    padding-bottom: 0;
+                }
+
+                #boton{
+                    margin-top: -100px;
+                }
+                text1{
+
+                }
+
+
+            </style>
+
+            <div class="logo">
+                <a href="index.html">TransJacksonTours</a>
+            </div>
+            <nav class="navbar">
+                <a href="inicio.html">Inicio</a>
+                <a href="login.html">Log-in</a>
+                <a href="nosotros.html">Nosotros</a>
+                <a href="Contacto.html">Contacto</a>
+                <a href="transporte.html">Transporte</a>
+                <a href="cotizar.html">Cotizar</a>
+
+            </nav>
+        </header>
+        
+        <header class="content header">
+            
+            <h2 class="title">TransJacksonTours</h2>
+            <p>
+                Empresa enfocada en el transporte y turismo  
+            </p>
+            <div class="btn-home">
+                <a href="#" class="btn">Inicio Sesion</a>
+                <a href="#" class="btn">Saber mas</a>
+            </div>
+        </header>
+        <section class="content sau">
+            <h2 class="title">Transporte</h2>
+            <p>Aqui tienes las diferentes capacidades de cada Bus/Buseta.</p>
+            <div class="box-container">
+                <div class="box">
+                    <i class="fas fa-bus-alt"></i>
+                    <h3>TOYOTA Hiace</h3>
+                    <p>Capacidad: 17 pasajeros</p>  
+                </div>
+                <div class="box">
+                    <i class="fas fa-bus-alt"></i>
+                    <h3>MITSUBICHI Fuso Rosa 34P</h3>
+                    <p>Capacidad: 33 pasajeros.</p>
+                </div>
+                <div class="box">
+                    <i class="fas fa-bus-alt"></i>
+                    <h3>Bus</h3>
+                    <p>Capacidad = X pasjeros.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="content about">
+            <h2 class="title">About us</h2>
+            <p>Quieres observar el transporte con el que contamos</p>
+            <a href="transporte.html" class="btn">Ver Transporte</a>
+        </section>
+        <section class="content price">
+            <article class="contain">
+                <h2 class="title">Cotizar</h2>
+                <p>Si desea Cotizar puede ingresar aqui.</p>
+            </article>
+            <a href="#" class="btn">Cotizar</a>
+        </section>
+
+        <section class="contact">
+            <h2 class="title">Contacto</h2>
+            <p>8454-8403</p>
+            <figure class="">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4042217.145522263!2d-87.44983893401528!3d8.354579418750102!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f92e56221acc925%3A0x6254f72535819a2b!2sCosta%20Rica!5e0!3m2!1ses-419!2scr!4v1696093010590!5m2!1ses-419!2scr" width="600" height="450" style="border:0;" allowfullscreen=""  referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </figure>
+
+
+        </section>
+    </body>
+</html>

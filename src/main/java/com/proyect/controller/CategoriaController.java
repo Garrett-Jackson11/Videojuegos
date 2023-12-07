@@ -5,8 +5,8 @@
 package com.proyect.controller;
 
 import com.proyect.domain.Categoria;
-import com.proyect.service.CategoriaService;
-import com.proyect.serviceImpl.FirebaseStorageServiceImpl;
+import com.proyect.services.CategoriaService;
+import com.proyect.services.impl.FirebaseStorageServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

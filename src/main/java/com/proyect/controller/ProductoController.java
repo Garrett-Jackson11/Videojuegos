@@ -5,9 +5,9 @@
 package com.proyect.controller;
 
 import com.proyect.domain.Producto;
-import com.proyect.service.CategoriaService;
-import com.proyect.service.ProductoService;
-import com.proyect.serviceImpl.FirebaseStorageServiceImpl;
+import com.proyect.services.CategoriaService;
+import com.proyect.services.ProductoService;
+import com.proyect.services.impl.FirebaseStorageServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -27,8 +27,8 @@ public class ProductoController {
 
     @Autowired
     private ProductoService productoService;
-    
-     @Autowired
+
+    @Autowired
     private CategoriaService categoriaService;
 
     @GetMapping("/listado")
@@ -76,6 +76,8 @@ public class ProductoController {
     public String productoModificar(Producto producto, Model model) {
         producto = productoService.getProducto(producto);
         model.addAttribute("producto", producto);
+        var categorias = categoriaService.getCategorias(false);
+        model.addAttribute("categorias", categorias);
         return "/producto/modifica";
     }
 }
